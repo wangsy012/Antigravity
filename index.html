@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>現代淺色俄羅斯方塊</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <div class="left-panel">
+            <canvas id="gameCanvas" width="300" height="600"></canvas>
+        </div>
+        <div class="right-panel">
+            <div class="info-box">
+                <h2>下一個</h2>
+                <canvas id="previewCanvas" width="120" height="120"></canvas>
+            </div>
+            <div class="info-box stats-box">
+                <div class="stat">
+                    <span class="label">分數</span>
+                    <span class="value" id="score">0</span>
+                </div>
+                <div class="stat">
+                    <span class="label">行數</span>
+                    <span class="value" id="lines">0</span>
+                </div>
+                <div class="stat">
+                    <span class="label">等級</span>
+                    <span class="value" id="level">1</span>
+                </div>
+            </div>
+            <div class="controls-hint">
+                <h3>操作說明</h3>
+                <ul>
+                    <li><span class="key">←</span> <span class="key">→</span> 左右移動</li>
+                    <li><span class="key">↑</span> 或 <span class="key">X</span> 順時針旋轉</li>
+                    <li><span class="key">Z</span> 逆時針旋轉</li>
+                    <li><span class="key">↓</span> 軟下落</li>
+                    <li><span class="key">Space</span> 直接下落</li>
+                </ul>
+            </div>
+            <button id="startBtn">開始遊戲</button>
+        </div>
+    </div>
+    
+    <!-- Game Over Modal -->
+    <div id="gameOverModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>遊戲結束</h2>
+            <p>最終分數: <span id="finalScore">0</span></p>
+            <button id="restartBtn">再玩一次</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
